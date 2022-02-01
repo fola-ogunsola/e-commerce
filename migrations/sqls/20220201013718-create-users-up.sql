@@ -6,7 +6,6 @@ CREATE TABLE "users" (
     "email" varchar UNIQUE,
     "phone_number"  VARCHAR(50) NOT NULL,
     "password" varchar(255),
-    "is_admin" BOOLEAN DEFAULT 'false',
     "confirmation_code" varchar,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     "updated_at" TIMESTAMPTZ NOT NULL DEFAULT NOW()

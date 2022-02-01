@@ -34,9 +34,11 @@ function createUser(req,res){
         // }
         return res.status(200).json({status: "success", message: "A message has been sent to your email, Please confirm ", data})
     })
+
     .catch(function(err){
         return res.status(400).json({status: "failed", message: "Something went wrong",err})
     })
+
 }
 
 function verifyUser(req, res){

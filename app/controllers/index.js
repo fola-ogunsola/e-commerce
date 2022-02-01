@@ -17,9 +17,8 @@ function createUser(req,res){
     var phone_number = req.body.phone_number;
     var salt = bcrypt.genSaltSync(10);
     var hash = bcrypt.hashSync(req.body.password, salt);
-    var is_admin = req.body.is_admin
     var confirmation_code = OTP;
-    const value = [first_name, last_name, email, phone_number, hash, is_admin, confirmation_code]
+    const value = [first_name, last_name, email, phone_number, hash, confirmation_code]
     db.any(queries.createUser, value)
     .then(function(data){
         nodemailer.sendEmailConfirmation(
@@ -33,9 +32,11 @@ function createUser(req,res){
         // }
         return res.status(200).json({status: "success", message: "A message has been sent to your email, Please confirm "})
     })
-    .catch(function(err){
-        return res.status(400).json({status: "failed", message: "Something went wrong"})
-    })
+    // .catch(function(err){
+    //     return res.status(400).json({status: "failed", message: "Something went wrong", err},
+    //     console.log(err))
+        
+    // })
 }
 
 

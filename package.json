@@ -25,6 +25,7 @@
     "nodemailer": "^6.7.0",
     "npm": "^8.2.0",
     "pg-promise": "^10.11.1",
+    "stripe": "^8.201.0",
     "supertest": "^6.1.6",
     "uuid": "^8.3.2"
   },

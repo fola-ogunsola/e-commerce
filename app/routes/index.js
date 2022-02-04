@@ -15,7 +15,7 @@ router.post('/admin/register', user.createAdmin),
 
 router.post('/confirm/:confirmation_code', user.verifyAdmin),
 
-router.post('/admin/login', user.adminLogin),
+router.post('/admin/login', user.adminLogin)
 
 
 
